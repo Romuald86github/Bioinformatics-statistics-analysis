@@ -34,7 +34,7 @@ asv_df_filtered = asv_df[asv_df['ASV'].isin(taxonomy_df['ASV'])]
 # Merge the filtered ASV count table with the taxonomy table on the 'ASV' column
 merged_df = pd.merge(asv_df_filtered, taxonomy_df, on='ASV', how='left')
 
-# Drop the 'similarity_percentage' and 'nt_database_id' columns to create merged_df1
+# Drop the 'similarity_percentage', 'nt_database_id' and duplicate samples columns to create merged_df
 merged_df = merged_df.drop(columns=['S177', 'S94', 'S29', 'S93', 'S39', 'S82', 'similarity_percentage', 'nt_database_id'])
 
 
